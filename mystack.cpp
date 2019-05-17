@@ -7,7 +7,6 @@ private:
     T top;
     int capacity;
     T *stack;
-    
 
 public:
     Stack(T capacity) {
@@ -25,10 +24,11 @@ public:
         stack[top] = value;
     }
 
-    T pop(){
+    T pop() {
         if (isEmpty())
-	    cout << "Stack is empty." << endl;
-	return stack[top--];
+            cout << "Stack is empty." << endl;
+        top--;
+	return stack[top + 1];
     }
 
     T peek() {
@@ -62,9 +62,9 @@ int main() {
     myStack1.print();
 
     myStack1.pop();
-    cout << "Top element is: " << myStack1.pop() << endl;
-    myStack1.pop();
     cout << "Top element is: " << myStack1.peek() << endl;
+    myStack1.pop();
+    cout << "Top element is: " << myStack1.pop() << endl;
     myStack1.print();
     myStack1.pop();
     myStack1.print();
@@ -72,8 +72,8 @@ int main() {
     myStack2.push('a');
     myStack2.push('b');
     myStack2.print();
-    cout << "Top element is: " << myStack2.pop() << endl;
-    myStack2.peek();
+    cout << "Top element is: " << myStack2.peek() << endl;
+    myStack2.pop();
     myStack2.print();
 
     return 0;
