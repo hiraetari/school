@@ -24,11 +24,14 @@ public:
         stack[top] = value;
     }
 
-    T pop() {
-        if (isEmpty())
+    bool pop() {
+        if (!isEmpty()){
+	    --top;
+	    return true;
+        }
+	else
             cout << "Stack is empty." << endl;
-        top--;
-	return stack[top + 1];
+	    return false;
     }
 
     T peek() {
